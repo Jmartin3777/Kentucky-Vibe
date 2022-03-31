@@ -20,7 +20,7 @@ namespace KentuckyVibe
             customer.LastName = Console.ReadLine ();
             customers.Add (customer);
             Console.WriteLine("Here is the list of customers");
-            customers.ForEach (customer => { Console.WriteLine(customer.FirstName+" "+customer.LastName); });
+            customers.ForEach (customer => { Console.WriteLine(customer.FullName); });
         }
     }
 }
