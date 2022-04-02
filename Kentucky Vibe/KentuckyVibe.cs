@@ -19,6 +19,8 @@ namespace KentuckyVibe
         public bool Validate() { return true; }
         public bool Retrieve() { return true; }
         public bool Save() { return true; }
+
+        
     }
     public class Product
 {
