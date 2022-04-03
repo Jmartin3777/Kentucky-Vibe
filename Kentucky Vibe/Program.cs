@@ -9,18 +9,9 @@ namespace KentuckyVibe
     {
         static void Main()
         {
-            Console.WriteLine("Hello,Welcome to Kentucky Vibe");
-            Console.WriteLine("DO you want to Register (Y/N)");
-            var registerResponse = Console.ReadLine().ToLower();
+            WelcomeCustomer();
+            var registerResponse = GatherUserInput();
             List<Customer> customers = new List<Customer>();
-            var isInputValid = ValidateUserInput(registerResponse);
-            while (isInputValid == false)
-            {
-             Console.WriteLine("Your input is not valid please enter a y or a n");
-             registerResponse = Console.ReadLine().ToLower();
-             isInputValid = ValidateUserInput(registerResponse);
-
-            }
 
             while (registerResponse == "y")
 
@@ -33,23 +24,18 @@ namespace KentuckyVibe
                 Console.WriteLine("Please put in your lastname");
                 customer.LastName = Console.ReadLine();
                 customers.Add(customer);
-                Console.WriteLine("DO you want to Register (Y/N)");
-                registerResponse = Console.ReadLine().ToLower();
-                isInputValid = ValidateUserInput(registerResponse);
-
-                while (isInputValid == false)
-                {
-                    Console.WriteLine("Your input is not valid please enter a y or a n");
-                    registerResponse = Console.ReadLine().ToLower();
-                    isInputValid = ValidateUserInput(registerResponse);
-
-                }
-
+                registerResponse = GatherUserInput();
             }
             Console.WriteLine("Here is the list of customers");
             customers.ForEach(customer => { Console.WriteLine(customer.FullName); });
 
         }
+
+        private static void WelcomeCustomer()
+        {
+            Console.WriteLine("Hello,Welcome to Kentucky Vibe");
+        }
+
         public static bool ValidateUserInput(string input) {
             string paturn = @"^[YNyn\s]{1}$";
             Regex rg=new Regex(@paturn);
@@ -57,6 +43,21 @@ namespace KentuckyVibe
         
         
         }
+        public static string GatherUserInput () {
+            Console.WriteLine("DO you want to Register (Y/N)");
+            var registerResponse = Console.ReadLine().ToLower();
+            var isInputValid = ValidateUserInput(registerResponse);
+            while (isInputValid == false)
+            {
+                Console.WriteLine("Your input is not valid please enter a y or a n");
+                registerResponse = Console.ReadLine().ToLower();
+                isInputValid = ValidateUserInput(registerResponse);
+
+            }
+
+
+            return registerResponse;
+            }
     }
 
 }

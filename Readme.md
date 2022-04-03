@@ -1,0 +1,7 @@
+This program is for coffee shops. In this case, a Coffee Shop called "Kentucky Vibe Coffee and Music". This program is in the beginning stages. When a customer enters the coffee shop, they can register in the computer at the front of the coffee shop. The program will save their first and last name. If they enter a name before entering yes, they will get a message stating that they need to enter either a Y for yes or a N for no. If they enter a Y, they will then be prompted to enter a first name. Then, they will be promted to enter a last name. This program will then loop and ask for the same thing over agaIn. The purpose of regIstering is that, in the future, the program will take orders and remember people by name and what they previous ordered. Also, registeration sets them up to receive coupons and notices via email.
+Features Met:
+Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
+
+Create a dictionary or list, populate it with several values, retrieve at least one value, and use it in your program
+
+Implement a regular expression (regex) to ensure a field either a phone number or an email address is always stored and displayed in the same format
